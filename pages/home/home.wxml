@@ -1,0 +1,49 @@
+<!--pages/home/home.wxml-->
+<view class="page">
+  <!-- <view class="swiper-container"> -->
+    <!-- <canvas class="swiperBkg" canvas-id="swiperBkg"></canvas>  -->
+    <view class="swiper">
+      <swiper indicator-dots="true" indicator-color="rgba(255, 255, 255, .3)" indicator-active-color="rgba(255, 255, 255, 1)" autoplay="true" interval="3000" duration="500">
+        <block wx:for="{{banner}}" wx:key="{{item.testId}}">
+          <swiper-item bindtap="gotoTest" data-id="{{item.testId}}">
+            <view class="swiper-title">{{item.testTitle}}</view>
+            <image src="{{item.testImg}}" class="swiper-img" mode="scaleToFill" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  <!-- </view> -->
+  <view class="hot">
+    <text>热门推荐</text>
+  </view>
+  <scroll-view class="list">
+    <view class="item" wx:for="{{testList}}" wx:key="{{item.id}}" bindtap="gotoTest" data-id="{{item.id}}">
+      <image src="{{item.listImg}}" lazy-load mode="widthFix" class="img"/>
+      <view class="right">
+        <view class="top">
+          <view class="category">
+            <text>{{item.categoryText}}</text>
+            <text>·</text>
+            <text>{{item.testedCount}}</text>
+            <text>已测</text>
+          </view>
+          <view class="title"><text>{{item.title}}</text></view>
+        </view>
+        <view class="bottom">
+          <view class="price">
+            <text class="orgPrice">￥{{item.orgPrice}}</text>
+            <text class="curPrice">￥{{item.curPrice}}</text>
+          </view>
+          <view wx:if="{{item.chargeType == 1}}"> 
+          <button class="share-btn" catchtap="share" open-type="share" data-test="{{item}}">{{item.chargeTypeText}}</button> 
+          </view> 
+        </view>
+      </view>
+    </view>
+    <view class="loading-status">
+      <text wx:if="{{loadingStatus === 'noMore'}}">已加载全部数据~</text>
+      <text wx:elif="{{loadingStatus === 'loading'}}">正在努力加载中...</text>
+      <text wx:elif="{{loadingStatus === 'loadMore'}}">上拉加载更多</text>
+    </view>
+  </scroll-view>
+</view>

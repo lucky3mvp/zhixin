@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="page">
+  <text>小程序首页</text>
+  <text class="failText" wx:if="{{failText !== ''}}">{{failText}}</text>
+  <button class='button' wx:if="{{buttonText !== ''}}" bindtap='buttonPressed'>{{buttonText}}</button>
+</view>

@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/home",
+    "pages/my/my",
+    "pages/test/test",
+    "pages/question/question"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#f5459b",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "知心测评",
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "light"
+  },
+  "networkTimeout": {
+    "request": 60000,
+    "downloadFile": 60000
+  }
+}

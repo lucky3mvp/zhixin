@@ -1,0 +1,119 @@
+/* pages/home/home.wxss */
+.page {
+  height: 100vh;
+  width: 100vw;
+  background-color: #f9f9f9;
+  font-size: 24rpx;
+}
+.swiper {
+  width: 100vw;
+  height: 400rpx;
+  box-sizing: border-box;
+  padding: 26rpx 24rpx;
+  /* 兼容不支持渐变的设备 */
+  background: #f5459b;
+  background: linear-gradient(to bottom, rgba(245, 69, 155, 1), rgba(255, 255, 255, 1));
+}
+swiper{
+  height: 100%;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.swiper-title {
+  font-size: 30rpx;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 26rpx;
+}
+.swiper-img {
+  border-radius: 10rpx;
+  display: block;
+  width: 100%;
+  height: 292rpx;
+}
+.hot {
+  margin-top: 20rpx;
+  font-size: 26rpx;
+  color: #1b1b1b;
+  background-color: #fff;
+  padding-top: 30rpx;
+  padding-left: 24rpx;
+}
+.list {
+  background-color: #fff;
+}
+.item {
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #f7f7f7;
+  padding: 26rpx 24rpx;
+}
+.img {
+  float: left;
+  width: 190rpx;
+  /* height: 170rpx; */
+  height: 190rpx;
+  border-radius: 10rpx;
+  margin-right: 24rpx;
+}
+.right {
+  /* img 宽 190rpx + 距离 26rpx */
+  margin-left: 216rpx; 
+  height: 190rpx;
+}
+.top {
+  height: 136rpx;
+  overflow: hidden;
+}
+.category {
+  color: #adadad;
+}
+.title {
+  color: #1b1b1b;
+  font-size: 28rpx;
+  margin-top: 14rpx;
+}
+.title text {
+  display: -webkit-box;
+  font-size: 28rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.bottom {
+  height: 54rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.price {
+  /* margin-top: 64rpx; */
+}
+.orgPrice {
+  color: #b8b8b8;
+  text-decoration: line-through;
+}
+.curPrice {
+  color: #ff56a7;
+  margin-left: 10rpx;
+}
+.share-btn {
+  /* 兼容不支持渐变的设备 */
+  background: #f5459b;
+  background: linear-gradient(to right, rgba(255, 99, 154, 1), rgba(245, 69, 155, 1));
+  height: 54rpx;
+  line-height: 54rpx;
+  color: #fff;
+  font-size: 24rpx;
+  border-radius: 28rpx;
+  border: none;
+}
+.loading-status {
+  text-align: center;
+  font-size: 26rpx;
+  line-height: 2;
+  padding: 0 14rpx;
+  color: #b8b8b8;
+}

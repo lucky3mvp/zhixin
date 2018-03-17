@@ -1,0 +1,22 @@
+<!--pages/question/question.wxml-->
+<view class="page" wx:if="{{!hasTested}}">
+  <view class="info">
+    <view class="index">{{index+1}}</view>
+    <view class="seperator mg-b">/</view>
+    <view class="mg-b">
+      <view class="test-title">{{title}}</view>
+      <view class="counter">共{{questions.length}}题</view>
+    </view>
+  </view>
+  <view class="box">
+    <view class="question-title">{{questions[index].title}}</view>
+    <view>
+      <button wx:for="{{questions[index].choices}}" wx:key="{{index}}" class="question-choice" data-choice="{{questions[index].choices[index]}}" bindtap="choose">{{item.head}}.{{item.body}}</button>
+    </view>
+  </view>
+</view>
+<view wx:else>
+  <view>{{result.resultTitle}}</view>
+  <view>{{result.resultDesc}}</view>
+  <button open-type="share">分享给朋友</button>
+</view>

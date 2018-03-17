@@ -1,0 +1,100 @@
+/* pages/test/test.wxss */
+.page {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #f9f9f9;
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: column;
+}
+.info {
+  background-color: #fff;
+  padding: 24rpx 24rpx 40rpx;
+}
+.img {
+  height: 288rpx;
+  width: 100%;
+  display: block;
+  border-radius: 28rpx;
+}
+.title {
+  font-size: 46rpx;
+  font-weight: 700;
+  color: #1b1b1b;
+  margin-top: 42rpx;
+}
+.category {
+  color: #5a5a5a;
+  margin-top: 22rpx;
+}
+.ranking {
+  background-color: #f5459b;
+  color: #fff;
+  margin-right: 16rpx;
+  padding: 2rpx 16rpx;
+  border-radius: 24rpx;
+}
+.dot {
+  display: inline-block;
+  margin: 0 10rpx;
+}
+.bottom {
+  margin-top: 36rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.price {
+}
+.orgPrice {
+  color: #b8b8b8;
+  text-decoration: line-through;
+}
+.curPrice {
+  color: #ff56a7;
+  display: inline-block;
+  margin-right: 14rpx;
+  font-size: 36rpx;
+}
+.btnContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.btn {
+  width: 206rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  border-radius: 36rpx;
+  color: #fff;
+  font-size: 24rpx;
+  border: none;
+}
+.btn.orange {
+  background-color: #fe9161;
+}
+.btn.pink {
+  background: #f5459b;
+  background: linear-gradient(to right, rgba(255, 99, 154, 1), rgba(245, 69, 155, 1));
+  margin-left: 10rpx;
+}
+.warning {
+  flex: 1;
+  margin-top: 20rpx;
+  background-color: #fff;
+  padding: 0 32rpx;
+  color: #666;
+}
+.sec {
+  padding-bottom: 54rpx;
+}
+.sec.border {
+  border-top: 2rpx solid #f7f7f7;
+}
+.heading {
+  font-size: 26rpx;
+  font-weight: 700;
+  color: #1b1b1b;
+  padding: 32rpx 0;
+}

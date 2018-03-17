@@ -1,0 +1,56 @@
+/* pages/my/my.wxss */
+.page {
+  height: 100hv;
+  width: 100vw;
+}
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 100rpx;
+}
+.userinfo-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 50rpx; 
+  margin-left: 50rpx;
+}
+.userinfo-nickname {
+  /* margin-top: 40rpx; */
+}
+.tabs {
+  height: 64rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 44rpx;
+}
+.tab-item {
+  flex: 1;
+  font-size: 32rpx;
+  color: #999;
+  position: relative;
+  padding: 10rpx 0;
+}
+.tab-item.active {
+  color: #333;
+}
+.tab-text {
+  text-align: center;
+}
+.tab-line {
+  position: absolute;
+  left: 10rpx;
+  right: 10rpx;
+  bottom: 0;
+  height: 4rpx;
+  background-color: #ff0000;
+}
+.content {
+  height: 400rpx;
+  line-height: 400rpx;
+  text-align: center;
+}
