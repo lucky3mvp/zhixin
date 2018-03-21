@@ -1,3 +1,5 @@
 /**app.wxss**/
-.container {
-} 
+
+button:after {
+  border: none;
+}

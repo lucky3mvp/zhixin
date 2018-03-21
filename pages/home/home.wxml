@@ -1,41 +1,45 @@
 <!--pages/home/home.wxml-->
 <view class="page">
-  <!-- <view class="swiper-container"> -->
-    <!-- <canvas class="swiperBkg" canvas-id="swiperBkg"></canvas>  -->
-    <view class="swiper">
-      <swiper indicator-dots="true" indicator-color="rgba(255, 255, 255, .3)" indicator-active-color="rgba(255, 255, 255, 1)" autoplay="true" interval="3000" duration="500">
-        <block wx:for="{{banner}}" wx:key="{{item.testId}}">
-          <swiper-item bindtap="gotoTest" data-id="{{item.testId}}">
-            <view class="swiper-title">{{item.testTitle}}</view>
-            <image src="{{item.testImg}}" class="swiper-img" mode="scaleToFill" />
-          </swiper-item>
-        </block>
-      </swiper>
-    </view>
-  <!-- </view> -->
+  <view class="swiper">
+    <swiper indicator-dots="{{false}}" autoplay="{{false}}" interval="{{3000}}" duration="{{500}}">
+      <block wx:for="{{banner}}" wx:key="{{item.testId}}">
+        <swiper-item bindtap="gotoTest" data-id="{{item.testId}}">
+          <view class="swiper-header">
+            <view class="swiper-no">NO.{{index+1}}</view>
+            <text class="swiper-title">{{item.testTitle}}</text>
+            <view class="swiper-indicator-container">
+              <view class="{{ind === index ? 'swiper-indicator active' : 'swiper-indicator'}}" wx:for="{{banner}}" wx:for-index="ind" wx:key="{{ind}}"></view>
+            </view>
+          </view>
+          <image src="{{item.testImg}}" class="swiper-img" mode="scaleToFill" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
   <view class="hot">
+    <image src="/assets/images/hot.png" class="hot-img" />
     <text>热门推荐</text>
   </view>
   <scroll-view class="list">
     <view class="item" wx:for="{{testList}}" wx:key="{{item.id}}" bindtap="gotoTest" data-id="{{item.id}}">
-      <image src="{{item.listImg}}" lazy-load mode="widthFix" class="img"/>
-      <view class="right">
-        <view class="top">
-          <view class="category">
+      <image class="item-img" src="{{item.listImg}}" lazy-load mode="widthFix" />
+      <view class="item-body">
+        <view class="item-body-top">
+          <view class="item-category">
             <text>{{item.categoryText}}</text>
-            <text>·</text>
+            <text class="item-category-dot">·</text>
             <text>{{item.testedCount}}</text>
             <text>已测</text>
           </view>
-          <view class="title"><text>{{item.title}}</text></view>
+          <view class="item-title"><text>{{item.title}}</text></view>
         </view>
-        <view class="bottom">
-          <view class="price">
+        <view class="item-body-bottom">
+          <view class="item-price">
             <text class="orgPrice">￥{{item.orgPrice}}</text>
             <text class="curPrice">￥{{item.curPrice}}</text>
           </view>
           <view wx:if="{{item.chargeType == 1}}"> 
-          <button class="share-btn" catchtap="share" open-type="share" data-test="{{item}}">{{item.chargeTypeText}}</button> 
+            <button class="share-btn" catchtap="share" open-type="share" data-test="{{item}}">{{item.chargeTypeText}}</button> 
           </view> 
         </view>
       </view>

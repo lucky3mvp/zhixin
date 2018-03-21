@@ -7,10 +7,10 @@
     "pages/question/question"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#f5459b",
+    "navigationBarBackgroundColor": "#f7449c",
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "知心测评",
-    "backgroundColor": "#fff",
+    "backgroundColor": "#ffffff",
     "backgroundTextStyle": "light"
   },
   "networkTimeout": {

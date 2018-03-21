@@ -19,10 +19,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 不能通过 canvas 去设置渐变背景色：
-    // canvas 组件是由客户端创建的原生组件，它的层级是最高的，不能通过 z-index 控制层级
-    // 因此会导致内容被 canvas 覆盖
-    // this.drawGradient();
     this.queryTestList();
     this.queryBanner();
   },
@@ -90,19 +86,6 @@ Page({
         fail: function (res) { }
       }
     }
-  },
-  drawGradient: function () {
-    const ctx = wx.createCanvasContext('swiperBkg');
-
-    // Create linear gradient
-    const grd = ctx.createLinearGradient(0, 0, 0, 200 ); // 200 是以 iphone6 的尺寸来算的，wx 貌似会自适应屏幕
-    grd.addColorStop(0, '#f5459b');
-    grd.addColorStop(1, '#fff');
-
-    // Fill with gradient
-    ctx.setFillStyle(grd);
-    ctx.fillRect(0, 0, this.data.windowWidth, 200 );
-    ctx.draw();
   },
   queryTestList: function (loadMore) {
     Fetch.post('api/home/index', {
