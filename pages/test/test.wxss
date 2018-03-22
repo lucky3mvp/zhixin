@@ -126,7 +126,7 @@
   align-items: center;
   height: 40rpx;
 }
-.heading-img {
+.heading-icon {
   width: 30rpx;
   height: 30rpx;
   margin-right: 14rpx;

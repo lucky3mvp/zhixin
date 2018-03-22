@@ -41,7 +41,7 @@
   </view>
   <view class="warning">
     <view class="heading">
-      <image src="/assets/images/introduction.png" class="heading-img" />
+      <image src="/assets/images/introduction.png" class="heading-icon" />
       <text>测试介绍</text>
     </view>
     <text class="paragraph">{{test.introduction}}</text>
@@ -49,7 +49,7 @@
   <view class="border"></view>
   <view class="warning">
     <view class="heading">
-      <image src="/assets/images/notice.png" class="heading-img" />
+      <image src="/assets/images/notice.png" class="heading-icon" />
       <text>测试须知</text>
     </view>
     <view>

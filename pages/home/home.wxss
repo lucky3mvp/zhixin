@@ -86,7 +86,7 @@ swiper, swiper-item {
   justify-content: flex-start;
   align-items: center;
 }
-.hot-img {
+.hot-icon {
   width: 30rpx;
   height: 30rpx;
   margin-right: 14rpx;

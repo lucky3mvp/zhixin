@@ -2,11 +2,12 @@
 .page {
   width: 100vw;
   height: 100vh;
-  background: #f5459b;
+  background: #f7449c;
   font-size: 24rpx;
 }
+/* 测试题目 */
 .info {
-  color: #fff;
+  color: #ffffff;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -14,8 +15,9 @@
   padding: 60rpx 0 66rpx 46rpx;
   line-height: 1
 }
-.index {
-  font-size: 76rpx;
+.current {
+  font-size: 100rpx;
+  color: rgba(255, 255, 255, 0.8);
   display: inline-block;
 }
 .mg-b {
@@ -24,38 +26,139 @@
 .seperator {
   margin: 0 24rpx 8rpx;
   font-size: 38rpx;
+  color: rgba(255, 255, 255, 0.6);
 }
 .test-title {
-  font-size: 26rpx;
+  font-size: 28rpx;
   margin-bottom: 16rpx;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
 }
 .counter {
   box-sizing: border-box;
   height: 42rpx;
-  width: 96rpx;
+  width: 102rpx;
   border-radius: 48rpx;
   padding: 10rpx 0;
   text-align: center;
-  background: rgba(255, 255, 255, 0.7);
-  color: rgba(245, 69, 155, 0.9);
+  background: rgba(255, 255, 255, 0.8);
+  color: #F7459C;
 }
 .box {
   margin: 0 26rpx;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 14rpx;
-  padding: 60rpx 22rpx;
-  color: #f5459b;
+  padding: 66rpx 24rpx;
+  color: #f7449c;
+  /* height: 780rpx; */
+}
+swiper {
+  height: 100%;
 }
 .question-title {
-  font-size: 46rpx;
+  font-size: 54rpx;
+  line-height: 75rpx;
   margin-bottom: 54rpx;
+  padding: 0 24rpx;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.question-choice {
-  color: #f5459b;
-  height: 116rpx;
-  line-height: 116rpx;
+.question-choice-btn {
+  color: #f7449c;
+  height: 120rpx;
+  line-height: 120rpx;
   border-radius: 58rpx;
-  padding-left: 50rpx;
+  padding-left: 54rpx;
   text-align: left;
   margin-bottom: 24rpx;
+  font-size: 36rpx;
+  box-shadow: 0 6rpx 12rpx rgba(247, 68, 156, .05);
+}
+
+/* 测试结果 */
+.result-box {
+  padding: 30rpx 26rpx;
+  box-sizing: border-box;
+  height: 100vh;
+}
+.result {
+  flex: 1;
+  background: #ffffff;
+  /* 
+   * 给按钮留位置
+   * 按钮距离底部的距离 66 + 2个按钮高度 88*2 + 按钮间距 14 + 按钮距离顶部距离 80
+   */
+  padding-bottom: 336rpx;
+  border-top-left-radius: 24rpx;
+  border-top-right-radius: 24rpx;
+}
+.pd-h { 
+  /* 控制整体左右的padding */
+  padding: 0 34rpx;
+}
+.result-img {
+  border-top-left-radius: 24rpx;
+  border-top-right-radius: 24rpx;
+  height: 304rpx;
+  width: 100%;
+  display: block;
+}
+.result-test-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 108rpx;
+  border-bottom: 1rpx solid rgba(247, 68, 156, .15);
+  font-size: 28rpx;
+  color: #f7449c;
+  font-weight: 300;
+}
+.icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 14rpx;
+}
+.result-title {
+  padding: 34rpx 0;
+  font-size: 54rpx;
+  line-height: 54rpx;
+  color: rgba(0, 0, 0, 0.8);
+}
+.result-ranking {
+  padding-bottom: 22rpx;
+  border-bottom: 1rpx solid rgba(247, 68, 156, .15);
+}
+.result-ranking-item {
+  height: 40rpx;
+  color: #f7449c;
+  font-size: 28rpx;
+  font-weight: 300;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 28rpx;
+}
+.ranking-name {
+  margin-right: 100rpx;
+}
+.result-detail-container {
+  padding-top: 40rpx;
+  color: rgba(0, 0, 0, 0.8);
+}
+.result-detail-heading {
+  font-size: 28rpx;
+  height: 40rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.result-detail {
+  font-size: 28rpx;
+  font-weight: 300;
 }

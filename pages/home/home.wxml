@@ -17,7 +17,7 @@
     </swiper>
   </view>
   <view class="hot">
-    <image src="/assets/images/hot.png" class="hot-img" />
+    <image src="/assets/images/hot.png" class="hot-icon" />
     <text>热门推荐</text>
   </view>
   <scroll-view class="list">

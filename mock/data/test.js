@@ -33,6 +33,7 @@ module.exports = {
       "code": 200,
       "desc": "success",
       "data": {
+        "title": "你真的了解你的闺蜜吗？",
         "result|1-3": [{
           "title|1": ["你是猪吗？", "你是白痴吗？", "你是神经病吗？", "你是疯子吗？"],
           "choices": [{
@@ -57,10 +58,52 @@ module.exports = {
       "code": 200,
       "desc": "success",
       "data": {
+        "title": "测试狗屎运？",
         "resultTitle": "恭喜完成测试！！",
+        "resultImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1522288473&di=1826c03f836f92c01c231ebe3c737a91&imgtype=jpg&er=1&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D5b48aada953df8dcb23087d2a57818fe%2Fd000baa1cd11728b6c97280fc2fcc3cec3fd2c60.jpg",
         "resultDesc": "结果表明，你马上要走狗屎运了",
         "shareImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521224038870&di=1c0e0296c7b762a294d7935535087330&imgtype=0&src=http%3A%2F%2Fs8.sinaimg.cn%2Fbmiddle%2F493874324413c0266af37",
-        "shareMsg": "快来看我的测试结果" 
+        "shareMsg": "快来看我的测试结果",
+        "ranking": [{
+          "name": "神经指数",
+          "totalScore": 5,
+          "score": 3
+        }, {
+          "name": "逗比指数",
+          "totalScore": 5,
+          "score": 5
+        }, {
+          "name": "疯癫指数",
+          "totalScore": 5,
+          "score": 4.5
+        }]
+      }
+    })
+  },
+  'api/test/result': function () {
+    return Mock.mock({
+      "code": 200,
+      "desc": "success",
+      "data": {
+        "title": "测试狗屎运？",
+        "resultTitle": "恭喜完成测试！！",
+        "resultImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1522288473&di=1826c03f836f92c01c231ebe3c737a91&imgtype=jpg&er=1&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D5b48aada953df8dcb23087d2a57818fe%2Fd000baa1cd11728b6c97280fc2fcc3cec3fd2c60.jpg",
+        "resultDesc": "结果表明，你马上要走狗屎运了",
+        "shareImg": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1521224038870&di=1c0e0296c7b762a294d7935535087330&imgtype=0&src=http%3A%2F%2Fs8.sinaimg.cn%2Fbmiddle%2F493874324413c0266af37",
+        "shareMsg": "快来看我的测试结果",
+        "ranking": [{
+          "name": "神经指数",
+          "totalScore": 5,
+          "score": 3
+        }, {
+          "name": "逗比指数",
+          "totalScore": 5,
+          "score": 5
+        }, {
+          "name": "疯癫指数",
+          "totalScore": 5,
+          "score": 4.5
+        }]
       }
     })
   },

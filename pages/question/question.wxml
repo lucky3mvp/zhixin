@@ -1,7 +1,8 @@
 <!--pages/question/question.wxml-->
-<view class="page" wx:if="{{!hasTested}}">
+<view class="page" wx:if="{{status == 0}}"></view>
+<view class="page" wx:elif="{{!hasTested && !fromShare}}">
   <view class="info">
-    <view class="index">{{index+1}}</view>
+    <view class="current">{{current+1}}</view>
     <view class="seperator mg-b">/</view>
     <view class="mg-b">
       <view class="test-title">{{title}}</view>
@@ -9,14 +10,50 @@
     </view>
   </view>
   <view class="box">
-    <view class="question-title">{{questions[index].title}}</view>
-    <view>
-      <button wx:for="{{questions[index].choices}}" wx:key="{{index}}" class="question-choice" data-choice="{{questions[index].choices[index]}}" bindtap="choose">{{item.head}}.{{item.body}}</button>
-    </view>
+    <swiper indicator-dots="{{false}}" autoplay="{{false}}" duration="{{500}}" current="{{current}}"
+      style="height:{{2*(102+72*questions[current].choices.length)}}rpx;"
+    >
+      <block wx:for="{{questions}}" wx:for-item="question" wx:for-index="questionInd" wx:key="{{questionInd}}">
+        <swiper-item>
+          <view class="question-title" id="title">{{question.title}}</view>
+          <view>
+            <button class="question-choice-btn" wx:for="{{question.choices}}" wx:for-item="choice" wx:for-index="choiceInd" wx:key="{{choiceInd}}" data-choice="{{choice}}" bindtap="choose">{{choice.head}} . {{choice.body}}</button>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
   </view>
 </view>
-<view wx:else>
-  <view>{{result.resultTitle}}</view>
-  <view>{{result.resultDesc}}</view>
-  <button open-type="share">分享给朋友</button>
+<view class="page result-box" wx:else="{{hasTested || fromShare}}">
+  <view class="result">
+    <image src="{{result.resultImg}}" class="result-img" wx:if="{{result.resultImg}}" />
+    <view class="pd-h">
+      <view class="result-test-title">
+        <image src="/assets/images/introduction.png" class="icon" />
+        <text>{{result.title}}</text>
+      </view>
+      <view class="result-title">{{result.resultTitle}}</view>
+      <view class="result-ranking" wx:if="{{result.ranking && result.ranking.length > 0}}">
+        <view wx:for="{{result.ranking}}" wx:key="{{index}}" class="result-ranking-item">
+          <text class="ranking-name">{{item.name}}</text>
+          <block wx:for="{{item.fullStar}}" wx:for-index="indInner1" wx:key="{{indInner1}}">
+            <image src="/assets/images/star-full.png" class="icon" />
+          </block>
+          <block wx:for="{{item.halfStar}}" wx:for-index="indInner2" wx:key="{{indInner2}}">
+            <image src="/assets/images/star-half.png" class="icon" />
+          </block>
+          <block wx:for="{{item.emptyStar}}" wx:for-index="indInner3" wx:key="{{indInner3}}">
+            <image src="/assets/images/star-empty.png" class="icon" />
+          </block>
+        </view>
+      </view>
+      <view class="result-detail-container">
+        <view class="result-detail-heading">
+          <image src="/assets/images/introduction.png" class="icon" />
+          <text>详细说明</text>
+        </view>
+        <view class="result-detail">{{result.resultDesc}}</view>
+      </view>
+    </view>
+  </view>
 </view>

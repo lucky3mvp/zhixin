@@ -15,10 +15,14 @@ Page({
    */
   onLoad: function (options) {
     const { testId } = options;
+    wx.showLoading({
+      title: '加载中...',
+    })
+    this.queryTest(testId);
     this.setData({
       testId,
     }, () => {
-      this.queryTest();
+      wx.hideLoading();
     })
   },
   /**
@@ -64,7 +68,7 @@ Page({
                   }).then(res => { }).catch(err => { })
                   // 页面跳转
                   wx.navigateTo({
-                    url: `/pages/question/question?testId=${id}&title=${title}&hasTested=${hasTested}`,
+                    url: `/pages/question/question?testId=${id}&hasTested=${hasTested}`,
                   })
                 }
               }
@@ -83,8 +87,8 @@ Page({
       }
     }
   },
-  queryTest: function () {
-    const { testId } = this.data;
+  queryTest: function (testId) {
+    const testaId = testId || this.data.testId;
     const { loginInfo } = app.globalData;
     Fetch.post('api/test/index', {
       testId,
@@ -103,19 +107,19 @@ Page({
   },
   gotoTest: function (e) {
     const { test } = this.data;
-    const { id, title, hasTested } = test;
+    const { id, hasTested } = test;
     wx.navigateTo({
-      url: `/pages/question/question?testId=${id}&title=${title}&hasTested=${hasTested}`,
+      url: `/pages/question/question?testId=${id}&hasTested=${hasTested}`,
     })
   },
   buy: function(e) {
     const { test } = this.data;
-    const { id, chargeType, title, hasTested } = test;
+    const { id, chargeType, hasTested } = test;
     wx.showModal({
       content: '支付暂未完成，假设支付成功了',
       success: () => {
         wx.navigateTo({
-          url: `/pages/question/question?testId=${id}&title=${title}&hasTested=${hasTested}`,
+          url: `/pages/question/question?testId=${id}&hasTested=${hasTested}`,
         })
       }
     })

@@ -9,6 +9,7 @@ Page({
     buttonText: '',
     pageId: 0, // 0-首页 1-测试详情页 2-测试结果页
     testId: '',
+    testResultUserId: '',
     share: {
       userId: '',
       title: '',
@@ -17,10 +18,11 @@ Page({
   //页面加载后数据准备
   onLoad: function (options) {
     // 可以通过 options 判断一些页面跳转的参数等
-    const { pageId = 0, testId = '' } = options;
+    const { pageId = 0, testId = '', testResultUserId = '' } = options;
     this.setData({
       pageId: pageId,
       testId: testId,
+      testResultUserId: testResultUserId
     }, () => {
       this.verifyAuthInfo();
     });
@@ -124,19 +126,23 @@ Page({
     });
   },
   pageJump: function () {
-    const { pageId, testId, testResultUserId } = this.data;
-    // 跳转到首页
-    wx.redirectTo({
-      url: '/pages/home/home',
-    })
-    if (+pageId === 1) {
+    let { pageId, testId, testResultUserId } = this.data;
+    
+    if (pageId == 1) {
       // 跳到测试详情页
-      wx.navigateTo({
+      wx.redirectTo({
         url: `/pages/test/test?testId=${testId}`,
       }) 
-    } else if (+pageId === 2) {
+    } else if (pageId == 2) {
       // 跳到测试结果页
-      
+      wx.redirectTo({
+        url: `/pages/question/question?testId=${testId}&testResultUserId=${testResultUserId}`,
+      }) 
+    } else {
+      // 跳转到首页
+      wx.redirectTo({
+        url: '/pages/home/home',
+      })
     }
   },
   // 错误处理
