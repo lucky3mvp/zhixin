@@ -17,7 +17,7 @@
         <swiper-item>
           <view class="question-title" id="title">{{question.title}}</view>
           <view>
-            <button class="question-choice-btn" wx:for="{{question.choices}}" wx:for-item="choice" wx:for-index="choiceInd" wx:key="{{choiceInd}}" data-choice="{{choice}}" bindtap="choose">{{choice.head}} . {{choice.body}}</button>
+            <button class="question-choice-btn" hover-class="hover-class" wx:for="{{question.choices}}" wx:for-item="choice" wx:for-index="choiceInd" wx:key="{{choiceInd}}" data-choice="{{choice}}" bindtap="choose">{{choice.head}} . {{choice.body}}</button>
           </view>
         </swiper-item>
       </block>
@@ -57,3 +57,8 @@
     </view>
   </view>
 </view>
+<view class="share-box" wx:if="{{hasTested || fromShare}}">
+  <button class="share-box-btn share" hover-class="hover-class" open-type="share" wx:if="{{!fromShare}}">分享给好友</button>
+  <button class="share-box-btn test" hover-class="hover-class" bindtap='gotoHome'>其他测试</button>
+</view>
+

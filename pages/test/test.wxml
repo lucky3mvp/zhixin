@@ -16,25 +16,25 @@
         <text class="orgPrice">￥{{test.orgPrice}}</text>
       </view>
       <view class="btnContainer" wx:if="{{test.chargeType == 0}}">
-        <button class="btn pink" open-type="share">邀请朋友来测</button>
-        <button class="btn orange" bindtap="gotoTest">开始测试</button>
+        <button class="btn pink" hover-class="hover-class" open-type="share">邀请朋友来测</button>
+        <button class="btn orange" hover-class="hover-class" bindtap="gotoTest">开始测试</button>
       </view>
       <view class="btnContainer" wx:elif="{{test.chargeType == 1}}">
         <block wx:if="{{test.hasShared}}">
-          <button class="btn pink" open-type="share">分享给朋友</button>
-          <button class="btn orange" bindtap="gotoTest">开始测试</button>
+          <button class="btn pink" hover-class="hover-class" open-type="share">分享给朋友</button>
+          <button class="btn orange" hover-class="hover-class" bindtap="gotoTest">开始测试</button>
         </block>
         <block wx:else>
-          <button class="btn pink" open-type="share">分享免费测</button>
-          <button class="btn orange" bindtap="buy">立即购买</button>
+          <button class="btn pink" hover-class="hover-class" open-type="share">分享免费测</button>
+          <button class="btn orange" hover-class="hover-class" bindtap="buy">立即购买</button>
         </block>
       </view>
       <view class="btnContainer" wx:elif="{{test.chargeType == 2}}">
         <block wx:if="{{test.hasPayed}}">
-          <button class="btn orange only" bindtap="gotoTest">开始测试</button>
+          <button class="btn orange only" hover-class="hover-class" bindtap="gotoTest">开始测试</button>
         </block>
         <block wx:else>
-          <button class="btn orange only" bindtap="buy">立即购买</button>
+          <button class="btn orange only" hover-class="hover-class" bindtap="buy">立即购买</button>
         </block>
       </view>
     </view>

@@ -3,3 +3,6 @@
 button:after {
   border: none;
 }
+button.hover-class {
+  opacity: 0.5;
+}

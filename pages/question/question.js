@@ -169,5 +169,10 @@ Page({
     });
     _state['result'] = result;
     this.setData(_state);
+  },
+  gotoHome: function() {
+    wx.reLaunch({
+      url: '/pages/home/home',
+    })
   }
 })

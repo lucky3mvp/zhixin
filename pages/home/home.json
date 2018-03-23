@@ -1,4 +1,5 @@
 {
   "navigationBarTitleText": "知心测评",
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "black"
 }

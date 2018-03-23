@@ -115,6 +115,7 @@ Page({
   buy: function(e) {
     const { test } = this.data;
     const { id, chargeType, hasTested } = test;
+    // 删除下面的代码，开始你的表演
     wx.showModal({
       content: '支付暂未完成，假设支付成功了',
       success: () => {

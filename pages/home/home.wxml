@@ -39,7 +39,7 @@
             <text class="curPrice">￥{{item.curPrice}}</text>
           </view>
           <view wx:if="{{item.chargeType == 1}}"> 
-            <button class="share-btn" catchtap="share" open-type="share" data-test="{{item}}">{{item.chargeTypeText}}</button> 
+            <button class="share-btn" hover-class="hover-class" catchtap="share" open-type="share" data-test="{{item}}">{{item.chargeTypeText}}</button> 
           </view> 
         </view>
       </view>
