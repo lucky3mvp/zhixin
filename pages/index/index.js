@@ -89,11 +89,12 @@ Page({
     let login = new Promise((resolve, reject) => {
       wx.login({
         success: (res) => {
-          console.log("login suc: ", res);
-          Fetch.post('api/login', {
+          console.log("wx login suc: ", res);
+          Fetch.post('GatewayService/Login', {
             code: res.code
           }).then((res) => {
-            if (res.code === 200) {
+            console.log('api login suc: ', res);
+            if (res.code == 200) {
               resolve(res);
             } else {
               reject(res);

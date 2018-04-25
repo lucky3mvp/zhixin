@@ -1,5 +1,5 @@
 const devConfig = {
-  host: 'dev',
+  host: 'online',
 }
 
 const hostMap = {
@@ -9,7 +9,7 @@ const hostMap = {
   },
   // 线上环境接口 url 前缀
   online: {
-    'base': 'https://xxx.com/'
+    'base': 'https://www.zhixinceping.com/'
   }
 }
 

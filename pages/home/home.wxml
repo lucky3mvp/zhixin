@@ -8,7 +8,7 @@
             <view class="swiper-no">NO.{{index+1}}</view>
             <text class="swiper-title">{{item.testTitle}}</text>
             <view class="swiper-indicator-container">
-              <view class="{{ind === index ? 'swiper-indicator active' : 'swiper-indicator'}}" wx:for="{{banner}}" wx:for-index="ind" wx:key="{{ind}}"></view>
+              <view class="{{ind == index ? 'swiper-indicator active' : 'swiper-indicator'}}" wx:for="{{banner}}" wx:for-index="ind" wx:key="{{ind}}"></view>
             </view>
           </view>
           <image src="{{item.testImg}}" class="swiper-img" mode="scaleToFill" />
@@ -45,9 +45,9 @@
       </view>
     </view>
     <view class="loading-status">
-      <text wx:if="{{loadingStatus === 'noMore'}}">已加载全部数据~</text>
-      <text wx:elif="{{loadingStatus === 'loading'}}">正在努力加载中...</text>
-      <text wx:elif="{{loadingStatus === 'loadMore'}}">上拉加载更多</text>
+      <text wx:if="{{loadingStatus == 'noMore'}}">已加载全部数据~</text>
+      <text wx:elif="{{loadingStatus == 'loading'}}">正在努力加载中...</text>
+      <text wx:elif="{{loadingStatus == 'loadMore'}}">上拉加载更多</text>
     </view>
   </scroll-view>
 </view>

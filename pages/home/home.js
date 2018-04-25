@@ -93,7 +93,7 @@ Page({
       pageSize: this.data.pageSize,
     }).then(res => {
       const { code, data } = res;
-      if (code === 200) {
+      if (code == 200) {
         wx.stopPullDownRefresh(); // 停止上下拉刷新
         const { pageNo, pageSize, totalPage, result } = data;
         const newTestList = pageNo === 1 ? result : this.data.testList.concat(result);
@@ -129,7 +129,7 @@ Page({
   queryBanner: function () {
     Fetch.post('api/home/banner').then(res => {
       const { code, data } = res;
-      if (code === 200) {
+      if (code == 200) {
         const { result } = data;
         this.setData({
           banner: result
