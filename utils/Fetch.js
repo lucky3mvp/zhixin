@@ -124,7 +124,7 @@ export default {
         url: requestUrl,
         data: params,
         header: {
-          'content-type': 'application/x-www-form-urlencoded'
+          'content-type': 'application/json'
         },
         method: 'POST',
         success: (res) => {

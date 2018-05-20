@@ -1,6 +1,16 @@
 <!--index.wxml-->
 <view class="page">
-  <text>小程序首页</text>
-  <text class="failText" wx:if="{{failText !== ''}}">{{failText}}</text>
-  <button class='button' hover-class="hover-class" wx:if="{{buttonText !== ''}}" bindtap='buttonPressed'>{{buttonText}}</button>
+  <text class="title">小程序首页</text>
+  <block wx:if="{{canIUse}}">
+    <text class="failText" wx:if="{{failText !== ''}}">{{failText}}</text>
+    <view wx:if="{{buttonText == '授权登录'}}">
+      <button class='button' open-type='getUserInfo' bindgetuserinfo='applyForAuth'>{{buttonText}}</button>
+    </view>
+    <view wx:else>
+      <button class='button' hover-class="hover-class" wx:if="{{buttonText !== ''}}" bindtap='buttonPressed'>{{buttonText}}</button>
+    </view>
+  </block>
+  <block wx:else>
+    <text>当前微信版本过低，请升级微信版本</text>
+  </block>
 </view>
